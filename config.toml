@@ -40,7 +40,7 @@ paginate = 5
   [languages.en]
     languageName = "English"
     title = "My Blog"
-    subtitle = "A simple, retro theme for Hugo"
+    subtitle = "record what I learn everyday"
     owner = "Benjamin Cai"
     keywords = ""
     copyright = ""
@@ -56,7 +56,7 @@ paginate = 5
       [[languages.en.menu.main]]
         identifier = "about"
         name = "About"
-        url = "https://gohugo.io/getting-started/quick-start/"
+        url = "https://benjamincai.com/"
       [[languages.en.menu.main]]
         identifier = "showcase"
         name = "Showcase"
