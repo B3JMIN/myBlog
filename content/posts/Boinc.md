@@ -1,5 +1,5 @@
 +++
-title = "Hello Blog"
+title = "Raspberry Pi"
 date = "2020-04-03"
 author = "Benjamin Cai"
 description = "Blog for playing with Raspberry Pi"
