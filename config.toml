@@ -8,13 +8,13 @@ paginate = 5
   contentTypeName = "posts"
 
   # ["orange", "blue", "red", "green", "pink"]
-  themeColor = "red"
+  themeColor = "green"
 
   # if you set this to 0, only submenu trigger will be visible
   showMenuItems = 2
 
   # show selector to switch language
-  showLanguageSelector = true
+  showLanguageSelector = false
 
   # set theme to full screen width
   fullWidthTheme = false
@@ -43,7 +43,7 @@ paginate = 5
     subtitle = "record what I learn everyday"
     owner = "Benjamin Cai"
     keywords = ""
-    copyright = ""
+    copyright = "Benjamin Cai 2020"
     menuMore = "Show more"
     readMore = "Read more"
     readOtherPosts = "Read other posts"
