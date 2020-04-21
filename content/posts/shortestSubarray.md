@@ -48,4 +48,3 @@ class Solution:
    
         return end + 1 - start
 ```
-

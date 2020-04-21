@@ -1,5 +1,5 @@
 +++
-title = "1394Find Lucky Integer"
+title = "1394 Find Lucky Integer"
 date = "2020-04-21T10:10:49-04:00"
 author = "Benjamin Cai "
 description = "leetcode"
