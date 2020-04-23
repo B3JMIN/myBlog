@@ -159,3 +159,74 @@ func makeIncrementer(forIncrement amount: Int) -> () -> Int {
 #### Escape Closures
 `escaping` before the parameter's type to indicate that the closure is allowed to escape
 
+
+### 9. Structures and Classes
+
+```Swift
+struct Resolution {
+    var width = 0
+    var height = 0
+}
+class VideoMode {
+    var resolution = Resolution()
+    var interlaced = false
+    var frameRate = 0.0
+    var name: String?
+}
+```
+
+#### Structures and Enumerations are Value Types
+
+```Swift
+let hd = Resolution(width: 1920, height: 1080)
+var cinema = hd
+cinema.width = 2048
+// This only change the cinema width, it is like pass by value
+```
+
+#### Classes are reference Types
+```Swift
+let tenEighty = VideoMode()
+tenEighty.resolution = hd
+tenEighty.interlaced = true
+tenEighty.name = "1080i"
+tenEighty.frameRate = 25.0
+
+let alsoTenEighty = tenEighty
+alsoTenEighty.frameRate = 30.0
+
+// This change the frameRate of alsoTenEighty as well as tenEighty, passing with reference
+```
+
+
+### 10. Properties
+Stored properties store constant and variable values as part of an instance;
+Computed properties calculate a value
+Lazy Stored Properties
+
+Properties Observers:
+    `willSet and didSet`
+```Swift
+class StepCounter {
+    var totalSteps: Int = 0 {
+        willSet(newTotalSteps) {
+            print("About to set totalSteps to \(newTotalSteps)")
+        }
+        didSet {
+            if totalSteps > oldValue  {
+                print("Added \(totalSteps - oldValue) steps")
+            }
+        }
+    }
+}
+let stepCounter = StepCounter()
+stepCounter.totalSteps = 200
+// About to set totalSteps to 200
+// Added 200 steps
+stepCounter.totalSteps = 360
+// About to set totalSteps to 360
+// Added 160 steps
+stepCounter.totalSteps = 896
+// About to set totalSteps to 896
+// Added 536 steps
+```
