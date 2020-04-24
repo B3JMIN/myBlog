@@ -230,3 +230,86 @@ stepCounter.totalSteps = 896
 // About to set totalSteps to 896
 // Added 536 steps
 ```
+
+### 11.Methods
+
+#### Instance Methods
+
+```Swift
+class Counter {
+    var count = 0
+    func increment() {
+        count += 1
+    }
+    func increment(by amount:Int) {
+        count += amount 
+    }
+    func reset() {
+        count = 0
+    }
+}
+```
+Methods can change instance value
+
+
+### 12.Subscripts
+use subscripts to set and retrieve values by index without needing seperate methods for setting and retrieval
+```Swift
+subscript(index:Int) -> Int {
+    get {
+        // Return an appropriate subscript value here
+    }
+    set(newValue) {
+        // Perform a suitable setting action here
+    }
+} 
+```
+read-only subscript implementation
+```Swift
+struct TimesTable {
+    let multiplier: Int
+    subscript(index:Int) -> Int {
+        return multiplier * index 
+    }
+}
+let threeTimesTable = TimesTable(mulitplier:3)  
+```
+Type Subscripts
+define subscripts that are called on the type itself. You indicate a type subscript by writing the `static` keyword before `subscript` keyword
+```Swift
+enum Planet: Int {
+    case mercury = 1, venus, earth, mars, jupiter, saturn, uranus, neptune
+    static subscript(n: Int) -> Planet {
+        return Planet(rawValue: n)!
+    }
+}
+let mars = Planet[4]
+print(mars)
+```
+
+
+### 13 Inheritance
+
+#### Defining a Base Class
+```Swift
+class Vehicle {
+    var currentSpeed = 0.0
+    var description = String {
+        return "traveling at \(currentSpeed) miles per hour"
+    }
+    func makeNoise() {
+
+    }
+}
+```
+
+Some Subclassing 
+```Swift
+class Tandem: Vehicle {
+    var currentNumberOfPassengers = 0
+}
+// Now tandem has all the properties vehicle has
+```
+
+Overriding 
+The `override` keyword prompts Swift compiler to check superclass has a declaration that matches the one you provided for the override.
