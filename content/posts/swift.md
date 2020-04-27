@@ -313,3 +313,46 @@ class Tandem: Vehicle {
 
 Overriding 
 The `override` keyword prompts Swift compiler to check superclass has a declaration that matches the one you provided for the override.
+
+
+##### Properties and methods can be overrided 
+```Swift 
+class Car: Vehicle {
+    var gear = 1
+    override var description: String {
+        return super.description + " in gear \(gear)"
+    }
+}
+```
+
+Overriding Property Observers
+```Swift
+class AutomaticCar: Car {
+    override var currentSpeed: Double {
+        didSet {
+            gear = Int(currentSpeed /10.0) + 1
+        }
+    }
+}
+// whenever you set the currentSpeed property, didSet observer setsgear to a new choice of speed
+```
+
+
+## Some hard part [I havent learned yet in C++] 
+Initialization
+Initialization delegation for value Types
+
+Swift defines two kinds of initilizers for class types to help ensure all stored properties receive an initial value: [**designated initializers** and **convenience initializiers**](https://docs.swift.org/swift-book/LanguageGuide/Initialization.html)
+
+Designated Initializers
+```Swift
+init(parameters){
+    statements
+}
+```
+```Swift
+convenience init(parameters){
+    statements
+}
+```
+Failable Initialized: `init?` , we cal also override the failable initializer
