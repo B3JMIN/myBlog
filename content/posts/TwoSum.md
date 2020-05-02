@@ -53,6 +53,7 @@ class Solution:
                 return [i,nums.index(target-nums[i],i+1)]
     
 # This way we start from the i+1 position, just to ensure it's in the later list...
+# another key point is list.index(element, start, end); here we emphasize the starting point to search for the element to aviod duplicated
 ```
 
 Or we can use a dictionary, store the value first, then when we get in agian as a key we can simply return them 
