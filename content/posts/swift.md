@@ -174,7 +174,7 @@ class VideoMode {
     var name: String?
 }
 ```
-
+Structure can combine some data types together and create the data we want to use 
 #### Structures and Enumerations are Value Types
 
 ```Swift
@@ -384,4 +384,4 @@ It can enable you to drill down into subproperties within complex models
 
 Moreover, we can access properties through optional chaining
 
-Add a `!` can avoid the `nil` in variables
+Add a `!` can avoid the `nil` in variables 
