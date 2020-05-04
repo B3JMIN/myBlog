@@ -31,4 +31,9 @@ class Solution(object):
         while i <= num:
             i = i << 1
         return (i - 1) ^ num
+
+    # the core is ^, 111 ^ 101 = 010
 ```
+
+
+C++ method with bitwise operators
