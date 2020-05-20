@@ -11,16 +11,16 @@ paginate = 5
   themeColor = "green"
 
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 2
+  showMenuItems = 3
 
   # show selector to switch language
   showLanguageSelector = false
 
   # set theme to full screen width
-  fullWidthTheme = false
+  fullWidthTheme = true
 
   # center theme with default width
-  centerTheme = false
+  centerTheme = true
 
   # set a custom favicon (default is a `themeColor` square)
   # favicon = "favicon.ico"
@@ -57,3 +57,11 @@ paginate = 5
         identifier = "about"
         name = "About"
         url = "/About"
+      [[languages.en.menu.main]]
+        identifier = "Github"
+        name = "Github"
+        url = "https://github.com/B3JMIN"
+      [[languages.en.menu.main]]
+      identifier = "leetcode"
+        name = "Leetcode"
+        url = "/posts/leetcode/"
