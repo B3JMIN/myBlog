@@ -6,6 +6,7 @@
     <description>Recent content in Categories on My Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Benjamin Cai 2020</copyright>
     
 	<atom:link href="https://b3jmin-blog.netlify.com/categories/index.xml" rel="self" type="application/rss+xml" />
     

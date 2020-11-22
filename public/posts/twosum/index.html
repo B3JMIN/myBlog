@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Two Sum :: My Blog — record what I learn everyday</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="1. Two Sum Difficulty: Easy
+Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+Example:
+Given nums = [2, 7, 11, 15], target = 9, Because nums[0] &#43; nums[1] = 2 &#43; 7 = 9, return [0, 1]. Solution Language: Python3" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://b3jmin-blog.netlify.com/posts/twosum/" />
+
+
+
+
+<link rel="stylesheet" href="https://b3jmin-blog.netlify.com/assets/style.css">
+
+  <link rel="stylesheet" href="https://b3jmin-blog.netlify.com/assets/green.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://b3jmin-blog.netlify.com/img/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="https://b3jmin-blog.netlify.com/img/favicon/green.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  <meta name="twitter:site" content="" />
+
+<meta name="twitter:creator" content="Benjamin Cai" />
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Two Sum :: My Blog">
+<meta property="og:description" content="1. Two Sum Difficulty: Easy
+Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+Example:
+Given nums = [2, 7, 11, 15], target = 9, Because nums[0] &#43; nums[1] = 2 &#43; 7 = 9, return [0, 1]. Solution Language: Python3" />
+<meta property="og:url" content="https://b3jmin-blog.netlify.com/posts/twosum/" />
+<meta property="og:site_name" content="Two Sum" />
+<meta property="og:image" content="https://b3jmin-blog.netlify.com/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2020-04-22 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Benjamin Cai
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="https://github.com/B3JMIN">Github</a></li>
+        
+      
+        
+          <li><a href="/posts/leetcode/">Leetcode</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="https://github.com/B3JMIN">Github</a></li>
+      
+    
+      
+        <li><a href="/posts/leetcode/">Leetcode</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://b3jmin-blog.netlify.com/posts/twosum/">Two Sum</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2020-04-22
+    </span>
+    
+    
+    <span class="post-author">::
+      Benjamin Cai
+    </span>
+    
+  </div>
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <h3 id="1-two-sumhttpsleetcodecomproblemstwo-sum"><a href="https://leetcode.com/problems/two-sum/">1. Two Sum</a><a href="#1-two-sumhttpsleetcodecomproblemstwo-sum" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Difficulty: <strong>Easy</strong></p>
+<p>Given an array of integers, return <strong>indices</strong> of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have <strong><em>exactly</em></strong> one solution, and you may not use the <em>same</em> element twice.</p>
+<p><strong>Example:</strong></p>
+<pre><code>Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
+</code></pre><h4 id="solution">Solution<a href="#solution" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>Language: <strong>Python3</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">twoSum</span>(self, nums: List[int], target: int) <span style="color:#f92672">-&gt;</span> List[int]:
+        res <span style="color:#f92672">=</span> []
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> nums:
+            other <span style="color:#f92672">=</span> target <span style="color:#f92672">-</span> i
+            <span style="color:#66d9ef">if</span> nums<span style="color:#f92672">.</span>count(other) <span style="color:#f92672">and</span> nums<span style="color:#f92672">.</span>index(i) <span style="color:#f92672">!=</span> nums<span style="color:#f92672">.</span>index(other): 
+                <span style="color:#66d9ef">if</span> res<span style="color:#f92672">.</span>count(nums<span style="color:#f92672">.</span>index(i)) <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> res: 
+                    res<span style="color:#f92672">.</span>append(nums<span style="color:#f92672">.</span>index(i))
+                    res<span style="color:#f92672">.</span>append(nums<span style="color:#f92672">.</span>index(other))
+        <span style="color:#66d9ef">return</span> res
+    <span style="color:#75715e"># This doesnt works since it cannot output duplicate value inthe list</span>
+    <span style="color:#75715e"># for [3,3], it will return [] instead of [0,1]</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#75715e"># Here is my second thought on how to solve, we can </span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">twoSum</span>(self, nums, target):
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(nums)):
+            <span style="color:#66d9ef">if</span> target<span style="color:#f92672">-</span>nums[i] <span style="color:#f92672">in</span> nums[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:]:
+                <span style="color:#66d9ef">return</span> [i,nums<span style="color:#f92672">.</span>index(target<span style="color:#f92672">-</span>nums[i],i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)]
+    
+<span style="color:#75715e"># This way we start from the i+1 position, just to ensure it&#39;s in the later list...</span>
+<span style="color:#75715e"># another key point is list.index(element, start, end); here we emphasize the starting point to search for the element to aviod duplicated</span>
+</code></pre></div><p>Or we can use a dictionary, store the value first, then when we get in agian as a key we can simply return them</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">twoSum</span>(self, nums, target):
+        <span style="color:#66d9ef">if</span> len(nums) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1</span>:
+            <span style="color:#66d9ef">return</span> False
+        buff_dict <span style="color:#f92672">=</span> {}
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(nums)):
+            <span style="color:#66d9ef">if</span> nums[i] <span style="color:#f92672">in</span> buff_dict:
+                <span style="color:#66d9ef">return</span> [buff_dict[nums[i]], i]
+            <span style="color:#66d9ef">else</span>:
+            buff_dict[target<span style="color:#f92672">-</span>nums[i]] <span style="color:#f92672">=</span> i
+        <span style="color:#75715e"># Or Similar solution:</span>
+        dict <span style="color:#f92672">=</span>{}
+        <span style="color:#66d9ef">for</span> i, num <span style="color:#f92672">in</span> enumerate(nums):
+            <span style="color:#66d9ef">if</span> num <span style="color:#f92672">in</span> dict:
+                <span style="color:#66d9ef">return</span> [dict[num], i]
+            <span style="color:#66d9ef">else</span>:
+                dict[target <span style="color:#f92672">-</span>num] <span style="color:#f92672">=</span> i
+</code></pre></div><h4 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>should consider more to avoid the duplciate situation, using dict or iterate from the i + 1</p>
+
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://b3jmin-blog.netlify.com/posts/reverselinkedlist/">
+          <span class="button__icon">←</span>
+          <span class="button__text">206 Reverse Linked List</span>
+        </a>
+      </span>
+      
+      
+      <span class="button next">
+        <a href="https://b3jmin-blog.netlify.com/posts/luckyint/">
+          <span class="button__text">1394 Find Lucky Integer</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>Benjamin Cai 2020</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://b3jmin-blog.netlify.com/assets/main.js"></script>
+<script src="https://b3jmin-blog.netlify.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Raspberry Pi :: My Blog — record what I learn everyday</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="Use Raspberry Pi for exploring the outer Space I bought a Raspberry Pi last week and after I finish all the downloading and environment setting, I decide to make some interesting software on that and play some fun stuff.
+ First I install seti@home on Raspberry Pi:
+sudo apt-get install bonic sudo apt-get install bonic-client Then I just follow this instruction to setup it However, I found it takes more than 20 hours for it to compute 1 task&amp;hellip; so I decided to make more useful server&amp;hellip;" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://b3jmin-blog.netlify.com/posts/boinc/" />
+
+
+
+
+<link rel="stylesheet" href="https://b3jmin-blog.netlify.com/assets/style.css">
+
+  <link rel="stylesheet" href="https://b3jmin-blog.netlify.com/assets/green.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://b3jmin-blog.netlify.com/img/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="https://b3jmin-blog.netlify.com/img/favicon/green.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  <meta name="twitter:site" content="" />
+
+<meta name="twitter:creator" content="Benjamin Cai" />
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Raspberry Pi :: My Blog">
+<meta property="og:description" content="Use Raspberry Pi for exploring the outer Space I bought a Raspberry Pi last week and after I finish all the downloading and environment setting, I decide to make some interesting software on that and play some fun stuff.
+ First I install seti@home on Raspberry Pi:
+sudo apt-get install bonic sudo apt-get install bonic-client Then I just follow this instruction to setup it However, I found it takes more than 20 hours for it to compute 1 task&amp;hellip; so I decided to make more useful server&amp;hellip;" />
+<meta property="og:url" content="https://b3jmin-blog.netlify.com/posts/boinc/" />
+<meta property="og:site_name" content="Raspberry Pi" />
+<meta property="og:image" content="https://b3jmin-blog.netlify.com/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2020-04-03 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Benjamin Cai
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="https://github.com/B3JMIN">Github</a></li>
+        
+      
+        
+          <li><a href="/posts/leetcode/">Leetcode</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="https://github.com/B3JMIN">Github</a></li>
+      
+    
+      
+        <li><a href="/posts/leetcode/">Leetcode</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://b3jmin-blog.netlify.com/posts/boinc/">Raspberry Pi</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2020-04-03
+    </span>
+    
+    
+    <span class="post-author">::
+      Benjamin Cai
+    </span>
+    
+  </div>
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="use-raspberry-pi-for-exploring-the-outer-space">Use Raspberry Pi for exploring the outer Space<a href="#use-raspberry-pi-for-exploring-the-outer-space" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>I bought a Raspberry Pi last week and after I finish all the downloading and environment setting, I decide to make some interesting software on that and play some fun stuff.</p>
+
+  <figure class="&#39;center&#39;" >
+    <img src="/static/img/bonic.png"  alt="bonic picture"   style="&#39;border-radius:8px;&#39;"  />
+    
+  </figure>
+
+
+<p>First I install <a href="https://setiathome.berkeley.edu/">seti@home</a> on Raspberry Pi:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">  sudo apt-get install bonic
+  sudo apt-get install bonic-client
+</code></pre></div><p>Then I just follow this <a href="https://pimylifeup.com/raspberry-pi-boinc/">instruction</a> to setup it
+However, I found it takes more than 20 hours for it to compute 1 task&hellip;
+so I decided to make more useful server&hellip;</p>
+<h1 id="make-a-samba-file-server">Make a Samba file server<a href="#make-a-samba-file-server" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>There is a long story why i decide to make this&hellip;</p>
+<p>My roommate Scott is now working in a startup doing some web develop, what he did mostly is <code>html npm build &amp;&amp; npm start</code>. On a normal Wednesday he asked me to run that command for him since his computer cannot run <code>html npm build </code> :) I literally don&rsquo;t believe that so we just reinstall npm and node for his windows laptop, but that does nothing.</p>
+<p>He decided to send me all the file, we tried to use Wechat and email, but he found that Wechat cannot do that big file transfer and I think using email for all the node packages is a stupid thing..</p>
+<p>why not using the Pi?
+I installed samba server on that and figure out the ip address, we connect both to the server but we found the speed depends on wifi speed&hellip; so it takes 50 mins</p>
+<p>here is a picture when I connect my phone to the server:
+
+  <figure class="left" >
+    <img src="/static/img/iphoneShare.png"  alt="iphone Share"   style="border-radius:8px;"  />
+    
+  </figure>
+
+
+I like the server idea even it failed with this speed&hellip; :P</p>
+
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://b3jmin-blog.netlify.com/posts/lambda/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Learn AWS Lambda</span>
+        </a>
+      </span>
+      
+      
+      <span class="button next">
+        <a href="https://b3jmin-blog.netlify.com/posts/hello/">
+          <span class="button__text">Hello Blog</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>Benjamin Cai 2020</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://b3jmin-blog.netlify.com/assets/main.js"></script>
+<script src="https://b3jmin-blog.netlify.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

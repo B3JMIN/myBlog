@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Linked List :: My Blog — record what I learn everyday</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="Learn Basic Data Structure How to determine linked list cycle Main idea: using two pointer, faster has speed two while slower has speed one, there is no cycle if faster meets the destination, overwise faster meets slower.
+Question: Given a linked list,determine if it has a cycle in it
+Answer:
+# Definition for singly-linked list. # class ListNode: # def __init__(self, x): # self.val = x # self.next = None class Solution: def hasCycle(self, head: ListNode) -&amp;gt; bool: try: fast = head." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://b3jmin-blog.netlify.com/posts/linkedlist/" />
+
+
+
+
+<link rel="stylesheet" href="https://b3jmin-blog.netlify.com/assets/style.css">
+
+  <link rel="stylesheet" href="https://b3jmin-blog.netlify.com/assets/green.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://b3jmin-blog.netlify.com/img/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="https://b3jmin-blog.netlify.com/img/favicon/green.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  <meta name="twitter:site" content="" />
+
+<meta name="twitter:creator" content="Benjamin Cai " />
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Linked List :: My Blog">
+<meta property="og:description" content="Learn Basic Data Structure How to determine linked list cycle Main idea: using two pointer, faster has speed two while slower has speed one, there is no cycle if faster meets the destination, overwise faster meets slower.
+Question: Given a linked list,determine if it has a cycle in it
+Answer:
+# Definition for singly-linked list. # class ListNode: # def __init__(self, x): # self.val = x # self.next = None class Solution: def hasCycle(self, head: ListNode) -&amp;gt; bool: try: fast = head." />
+<meta property="og:url" content="https://b3jmin-blog.netlify.com/posts/linkedlist/" />
+<meta property="og:site_name" content="Linked List" />
+<meta property="og:image" content="https://b3jmin-blog.netlify.com/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2020-04-24 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Benjamin Cai
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="https://github.com/B3JMIN">Github</a></li>
+        
+      
+        
+          <li><a href="/posts/leetcode/">Leetcode</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="https://github.com/B3JMIN">Github</a></li>
+      
+    
+      
+        <li><a href="/posts/leetcode/">Leetcode</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://b3jmin-blog.netlify.com/posts/linkedlist/">Linked List</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2020-04-24
+    </span>
+    
+    
+    <span class="post-author">::
+      Benjamin Cai 
+    </span>
+    
+  </div>
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <h3 id="learn-basic-data-structure">Learn Basic Data Structure<a href="#learn-basic-data-structure" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<h5 id="how-to-determine-linked-list-cycle">How to determine linked list cycle<a href="#how-to-determine-linked-list-cycle" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h5>
+<p>Main idea: using two pointer, faster has speed two while slower has speed one, there is no cycle if faster meets the destination, overwise faster meets slower.</p>
+<p>Question:
+Given a linked list,determine if it has a cycle in it</p>
+<p>Answer:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#75715e"># Definition for singly-linked list.</span>
+<span style="color:#75715e"># class ListNode:</span>
+<span style="color:#75715e">#     def __init__(self, x):</span>
+<span style="color:#75715e">#         self.val = x</span>
+<span style="color:#75715e">#         self.next = None</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hasCycle</span>(self, head: ListNode) <span style="color:#f92672">-&gt;</span> bool:
+        <span style="color:#66d9ef">try</span>:
+            fast <span style="color:#f92672">=</span> head<span style="color:#f92672">.</span>next
+            slow <span style="color:#f92672">=</span> head
+            <span style="color:#66d9ef">while</span> slow <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> fas
+                slow <span style="color:#f92672">=</span> slow<span style="color:#f92672">.</span>next
+                fast <span style="color:#f92672">=</span> fast<span style="color:#f92672">.</span>next<span style="color:#f92672">.</span>next
+            <span style="color:#66d9ef">return</span> True
+        <span style="color:#66d9ef">except</span>:
+            <span style="color:#66d9ef">return</span> False
+</code></pre></div><p>The second question is a little bot harder
+Given a linkedlist, <strong>return the node</strong> where the cycle begins. if there is no cycle, return <code>null</code></p>
+<pre><code class="language-Consider" data-lang="Consider">        H: distance from head to cycle entry E
+        D: distance from E to X
+        L: cycle length
+                          _____
+                         /     \
+        head_____H______E       \
+                        \       /
+                         X_____/   
+        
+    
+        If fast and slow both start at head, when fast catches slow, slow has traveled H+D and fast 2(H+D). 
+        Assume fast has traveled n loops in the cycle, we have:
+        2H + 2D = H + D + L  --&gt;  H + D = nL  --&gt; H = nL - D
+        Thus if two pointers start from head and X, respectively, one first reaches E, the other also reaches E. 
+        In my solution, since fast starts at head.next, we need to move slow one step forward in the beginning of part 2
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
+    <span style="color:#75715e"># @param head, a ListNode</span>
+    <span style="color:#75715e"># @return a list node</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">detectCycle</span>(self, head):
+        <span style="color:#66d9ef">try</span>:
+            fast <span style="color:#f92672">=</span> head<span style="color:#f92672">.</span>next
+            slow <span style="color:#f92672">=</span> head
+            <span style="color:#66d9ef">while</span> fast <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> slow:
+                fast <span style="color:#f92672">=</span> fast<span style="color:#f92672">.</span>next<span style="color:#f92672">.</span>next
+                slow <span style="color:#f92672">=</span> slow<span style="color:#f92672">.</span>next
+        <span style="color:#66d9ef">except</span>:
+            <span style="color:#75715e"># if there is an exception, we reach the end and there is no cycle</span>
+            <span style="color:#66d9ef">return</span> None
+
+        <span style="color:#75715e"># since fast starts at head.next, we need to move slow one step forward</span>
+        slow <span style="color:#f92672">=</span> slow<span style="color:#f92672">.</span>next
+        <span style="color:#66d9ef">while</span> head <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> slow:
+            head <span style="color:#f92672">=</span> head<span style="color:#f92672">.</span>next
+            slow <span style="color:#f92672">=</span> slow<span style="color:#f92672">.</span>next
+
+        <span style="color:#66d9ef">return</span> head
+</code></pre></div>
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://b3jmin-blog.netlify.com/posts/data_structure/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Data Structure</span>
+        </a>
+      </span>
+      
+      
+      <span class="button next">
+        <a href="https://b3jmin-blog.netlify.com/posts/reverselinkedlist/">
+          <span class="button__text">206 Reverse Linked List</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>Benjamin Cai 2020</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://b3jmin-blog.netlify.com/assets/main.js"></script>
+<script src="https://b3jmin-blog.netlify.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

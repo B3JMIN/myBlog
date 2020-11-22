@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Learn AWS Lambda :: My Blog — record what I learn everyday</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="Start learning Lambda and AWS for the first time with Nodejs What can Lambda do? AWS Lambda is a serverless compute(It allows you to run code without having to deal with servers in the cloud) service that runs code and automatically manages the underlying compute resources with all the AWS services
+P.S. This is what I am interested in right now &amp;amp;&amp;amp; Not Familiar with AWS neither
+Implete with Node.js exports." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://b3jmin-blog.netlify.com/posts/lambda/" />
+
+
+
+
+<link rel="stylesheet" href="https://b3jmin-blog.netlify.com/assets/style.css">
+
+  <link rel="stylesheet" href="https://b3jmin-blog.netlify.com/assets/green.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://b3jmin-blog.netlify.com/img/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="https://b3jmin-blog.netlify.com/img/favicon/green.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  <meta name="twitter:site" content="" />
+
+<meta name="twitter:creator" content="Benjamin Cai" />
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Learn AWS Lambda :: My Blog">
+<meta property="og:description" content="Start learning Lambda and AWS for the first time with Nodejs What can Lambda do? AWS Lambda is a serverless compute(It allows you to run code without having to deal with servers in the cloud) service that runs code and automatically manages the underlying compute resources with all the AWS services
+P.S. This is what I am interested in right now &amp;amp;&amp;amp; Not Familiar with AWS neither
+Implete with Node.js exports." />
+<meta property="og:url" content="https://b3jmin-blog.netlify.com/posts/lambda/" />
+<meta property="og:site_name" content="Learn AWS Lambda" />
+<meta property="og:image" content="https://b3jmin-blog.netlify.com/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2020-04-11 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Benjamin Cai
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="https://github.com/B3JMIN">Github</a></li>
+        
+      
+        
+          <li><a href="/posts/leetcode/">Leetcode</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="https://github.com/B3JMIN">Github</a></li>
+      
+    
+      
+        <li><a href="/posts/leetcode/">Leetcode</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://b3jmin-blog.netlify.com/posts/lambda/">Learn AWS Lambda</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2020-04-11
+    </span>
+    
+    
+    <span class="post-author">::
+      Benjamin Cai
+    </span>
+    
+  </div>
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="start-learning-lambda-and-aws-for-the-first-time-with-nodejs-">Start learning Lambda and AWS for the first time with Nodejs<a href="#start-learning-lambda-and-aws-for-the-first-time-with-nodejs-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h3 id="what-can-lambda-do-">What can Lambda do?<a href="#what-can-lambda-do-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>AWS Lambda is a serverless compute(It allows you to run code without having to deal with servers in the cloud) service that runs code and automatically manages the underlying compute resources with all the AWS services</p>
+<p>P.S. This is what I am interested in right now &amp;&amp; Not Familiar with AWS neither</p>
+<h3 id="implete-with-nodejs">Implete with Node.js<a href="#implete-with-nodejs" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
+<span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">handler</span> <span style="color:#f92672">=</span>  <span style="color:#a6e22e">async</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>, <span style="color:#a6e22e">context</span>) {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;EVENT: \n&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">event</span>, <span style="color:#66d9ef">null</span>, <span style="color:#ae81ff">2</span>))
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">logStreamName</span>
+}
+</code></pre></div><p>This is a async function in nodejs, use <code>handler</code> to process event, once the handler exits or returns a response, it becomes available to handle another event.</p>
+<p>There are three parameters inteh <code>handler</code> function:</p>
+<ol>
+<li><code>event</code> contains information from the invoker, the <code>invoke</code> is a JSON-formatted string</li>
+<li><code>context</code> contains information about the invocation, function</li>
+<li><code>callback</code> is a function that you can call in non-async <a href="https://docs.aws.amazon.com/lambda/latest/dg/nodejs-handler.html#nodejs-handler-sync">handler</a> to send a response</li>
+</ol>
+<p>The <code>console.log</code> can log the JSON format of event or return <code>null</code></p>
+
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://b3jmin-blog.netlify.com/posts/removeelement/">
+          <span class="button__icon">←</span>
+          <span class="button__text">27 Remove element</span>
+        </a>
+      </span>
+      
+      
+      <span class="button next">
+        <a href="https://b3jmin-blog.netlify.com/posts/boinc/">
+          <span class="button__text">Raspberry Pi</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>Benjamin Cai 2020</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://b3jmin-blog.netlify.com/assets/main.js"></script>
+<script src="https://b3jmin-blog.netlify.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

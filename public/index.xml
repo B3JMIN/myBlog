@@ -6,10 +6,273 @@
     <description>Recent content on My Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <copyright>Benjamin Cai 2020</copyright>
+    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://b3jmin-blog.netlify.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Learn Dynamic programming along with Youtube course</title>
+      <link>https://b3jmin-blog.netlify.com/posts/dp_learning/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/dp_learning/</guid>
+      <description>I finally restart to learn dynamic programming Dynamic programming: mainly guessing + recursion + memorization
+if we memory all the fibonacci we dont need to recount the other side of fibonacci tree time = subproblems * time/subproblems
+5 easy steps to DP:
+ define subproblems guess relate subproblem solutions recurse &amp;amp; memorize or build DP table bottom-up solve the original problem  Topological order??? for fibonacci, we have to computer from small to n, reverse just not working for the time: just time * subproblem</description>
+    </item>
+    
+    <item>
+      <title>Some Update of my life</title>
+      <link>https://b3jmin-blog.netlify.com/posts/opentext/</link>
+      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/opentext/</guid>
+      <description>I finally got a new job I went to opentext waterloo for the fall term but just for 3 months. I worked as an iOS developer in a startup for one month and then I start this one.
+Manager asked me whether want to do front end or backend. I kind hate CSS even through I think he wants me cause I have front end experience.
+I choose backend and I start learning Java.</description>
+    </item>
+    
+    <item>
+      <title>Learn iOS development</title>
+      <link>https://b3jmin-blog.netlify.com/posts/learn-ios/</link>
+      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/learn-ios/</guid>
+      <description>iOS develop Protocal and delegates Protocal can assign some function to classes while classes dont need to know the func specifically only when the class is assigned delegate
+protocal AdvancedLifeSupport{ func performCPR() } // any class has the delegate AdvancedLifeSupport has the method performCPR() struct Paramedic: AdvancedLifeSupport { init(handler:EmergencyCallHandler){ handler.delegate = self } func performCPR() { print(&amp;#34;The paramedic does chest compressions, 30 per second.&amp;#34;) } } // struct can have func method from delegate // class can as well </description>
+    </item>
+    
+    <item>
+      <title>Permutation in String</title>
+      <link>https://b3jmin-blog.netlify.com/posts/permutationinstring/</link>
+      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/permutationinstring/</guid>
+      <description>Permutation in String </description>
+    </item>
+    
+    <item>
+      <title>Tire(Prefix Tree)</title>
+      <link>https://b3jmin-blog.netlify.com/posts/prefixtree/</link>
+      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/prefixtree/</guid>
+      <description>Why Tire? With Trie, we can do insert, search in O(L) time, which is obviously faster than BST
+Here is the question: Implement a trie with insert, search, and startsWith methods.
+Example:
+Trie trie = new Trie();
+trie.insert(&amp;ldquo;apple&amp;rdquo;); trie.search(&amp;ldquo;apple&amp;rdquo;); // returns true trie.search(&amp;ldquo;app&amp;rdquo;); // returns false trie.startsWith(&amp;ldquo;app&amp;rdquo;); // returns true trie.insert(&amp;ldquo;app&amp;rdquo;);
+trie.search(&amp;ldquo;app&amp;rdquo;); // returns true Note:
+You may assume that all inputs are consist of lowercase letters a-z. All inputs are guaranteed to be non-empty strings.</description>
+    </item>
+    
+    <item>
+      <title>Cousins in Binary Tree</title>
+      <link>https://b3jmin-blog.netlify.com/posts/leetcode/cousinsinbinary/</link>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/leetcode/cousinsinbinary/</guid>
+      <description>DFS and BFS understanding Here is the question: In a binary tree, the root node is at depth 0, and children of each depth k node are at depth k+1.
+Two nodes of a binary tree are cousins if they have the same depth, but have different parents.
+We are given the root of a binary tree with unique values, and the values x and y of two different nodes in the tree.</description>
+    </item>
+    
+    <item>
+      <title>Majority Element</title>
+      <link>https://b3jmin-blog.netlify.com/posts/majorityelement/</link>
+      <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/majorityelement/</guid>
+      <description>Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.
+You may assume that the array is non-empty and the majority element always exist in the array.
+Example1: Input: [3,2,3] Output: 3
+Example2: Input: [2,2,1,1,1,2,2] Output: 2
+My solution:
+class Solution: def majorityElement(self, nums: List[int]) -&amp;gt; int: length = len(nums) for num in set(nums): if nums.count(num) &amp;gt;= (length /2): return num # beats 95.</description>
+    </item>
+    
+    <item>
+      <title>Number Complement</title>
+      <link>https://b3jmin-blog.netlify.com/posts/numbercomplement/</link>
+      <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/numbercomplement/</guid>
+      <description>Number Complement Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.
+Example: Input: 5 Output: 2 Explanation: The binary representation of 5 is 101 (no leading zero bits), and its complement is 010. So you need to output 2.
+My submission:
+class Solution: def findComplement(self, num: int) -&amp;gt; int: length = len(bin(num)) - 2 return 2 ** length - num -1 some other methods in discussions: using bitwise shift</description>
+    </item>
+    
+    <item>
+      <title>Ransom Note</title>
+      <link>https://b3jmin-blog.netlify.com/posts/ransomnote/</link>
+      <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/ransomnote/</guid>
+      <description>Ransom Note Given an arbitrary ransom note string and another string containing letters from all the magazines, write a function that will return true if the ransom note can be constructed from the magazines ; otherwise, it will return false.
+Each letter in the magazine string can only be used once in your ransom note.
+Note: You may assume that both strings contain only lowercase letters.
+canConstruct(&amp;ldquo;a&amp;rdquo;, &amp;ldquo;b&amp;rdquo;) -&amp;gt; false canConstruct(&amp;ldquo;aa&amp;rdquo;, &amp;ldquo;ab&amp;rdquo;) -&amp;gt; false canConstruct(&amp;ldquo;aa&amp;rdquo;, &amp;ldquo;aab&amp;rdquo;) -&amp;gt; true</description>
+    </item>
+    
+    <item>
+      <title>First Bad Version</title>
+      <link>https://b3jmin-blog.netlify.com/posts/finddifference/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/finddifference/</guid>
+      <description>find Difference class Solution(object): &amp;#34;&amp;#34;&amp;#34; dictionary &amp;#34;&amp;#34;&amp;#34; def findTheDifference(self, s, t): dic = {} for ch in s: dic[ch] = dic.get(ch, 0) + 1 for ch in t: if dic.get(ch, 0) == 0: return ch else: dic[ch] -= 1 class Solution(object): &amp;#34;&amp;#34;&amp;#34; difference &amp;#34;&amp;#34;&amp;#34; def findTheDifference(self, s, t): diff = 0 for i in range(len(s)): diff -= ord(s[i]) diff += ord(t[i]) diff += ord(t[-1]) return chr(diff) # Here we use ord can change char to ord ASCII number and chr can change it back class Solution(object): &amp;#34;&amp;#34;&amp;#34; difference &amp;#34;&amp;#34;&amp;#34; def findTheDifference(self, s, t): diff = 0 for i in range(len(s)): diff -= ord(s[i]) diff += ord(t[i]) diff += ord(t[-1]) return chr(diff) </description>
+    </item>
+    
+    <item>
+      <title>First Bad Version</title>
+      <link>https://b3jmin-blog.netlify.com/posts/firstbadversion/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/firstbadversion/</guid>
+      <description>First Bad version Question You are a product manager, here is a array from 1 to n about the version in your product. you want to find the first bad version there is one provided function: bool isBadVersion(version) which will return whether version is bad. Implement a function to find the first bad version. You should minimize the number of calls to the API.
+Example: Given n = 5 and version 4 is the first bad version.</description>
+    </item>
+    
+    <item>
+      <title>Data Structure</title>
+      <link>https://b3jmin-blog.netlify.com/posts/data_structure/</link>
+      <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/data_structure/</guid>
+      <description>stack
+in python: LIFO(last in first out)
+some methods of python stack:
+Stack() &amp;ndash; create a python stack
+push(item)
+pop()
+peek() &amp;ndash; return the last one
+isEmpty() and size()
+Queue
+FIFO, some implementation: line up printer and hot potatoes
+also we have a deque, this can be FIFO or LIFO
+List:
+ordered list and unordered list: linked list and normal list
+Recursion:
+calculate the sum of the list:
+def listsum(numList): if len(numList) == 1: return numList[0] else: return numList[0] + listsum(numlist[1:]) Sorting algo:</description>
+    </item>
+    
+    <item>
+      <title>Linked List</title>
+      <link>https://b3jmin-blog.netlify.com/posts/linkedlist/</link>
+      <pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/linkedlist/</guid>
+      <description>Learn Basic Data Structure How to determine linked list cycle Main idea: using two pointer, faster has speed two while slower has speed one, there is no cycle if faster meets the destination, overwise faster meets slower.
+Question: Given a linked list,determine if it has a cycle in it
+Answer:
+# Definition for singly-linked list. # class ListNode: # def __init__(self, x): # self.val = x # self.next = None class Solution: def hasCycle(self, head: ListNode) -&amp;gt; bool: try: fast = head.</description>
+    </item>
+    
+    <item>
+      <title>206 Reverse Linked List</title>
+      <link>https://b3jmin-blog.netlify.com/posts/reverselinkedlist/</link>
+      <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/reverselinkedlist/</guid>
+      <description>How to reverse a Linked List 206. Reverse Linked List Difficulty: Easy
+Reverse a singly linked list.
+Example:
+Input: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL Output: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL Follow up:
+A linked list can be reversed either iteratively or recursively. Could you implement both?
+Solution Language: Python3
+# Definition for singly-linked list. # class ListNode: # def __init__(self, x): # self.val = x # self.next = None ​ class Solution: def reverseList(self, head: ListNode) -&amp;gt; ListNode: prev = None while head: current = head head = head.</description>
+    </item>
+    
+    <item>
+      <title>Two Sum</title>
+      <link>https://b3jmin-blog.netlify.com/posts/twosum/</link>
+      <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/twosum/</guid>
+      <description>1. Two Sum Difficulty: Easy
+Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+Example:
+Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1]. Solution Language: Python3</description>
+    </item>
+    
+    <item>
+      <title>1394 Find Lucky Integer</title>
+      <link>https://b3jmin-blog.netlify.com/posts/luckyint/</link>
+      <pubDate>Tue, 21 Apr 2020 10:10:49 -0400</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/luckyint/</guid>
+      <description>1394. Find Lucky Integer in an Array Difficulty: Easy
+Given an array of integers arr, a lucky integer is an integer which has a frequency in the array equal to its value.
+Return a lucky integer in the array. If there are multiple lucky integers return the largest of them. If there is no lucky integer return -1.
+Example 1:
+Input: arr = [2,2,3,4] Output: 2 Explanation: The only lucky number in the array is 2 because frequency[2] == 2.</description>
+    </item>
+    
+    <item>
+      <title>581 shortest unsorted continuous subarray</title>
+      <link>https://b3jmin-blog.netlify.com/posts/shortestsubarray/</link>
+      <pubDate>Tue, 21 Apr 2020 10:10:49 -0400</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/shortestsubarray/</guid>
+      <description>581. Shortest Unsorted Continuous Subarray Difficulty: Easy
+Given an integer array, you need to find one continuous subarray that if you only sort this subarray in ascending order, then the whole array will be sorted in ascending order, too.
+You need to find the shortest such subarray and output its length.
+Example 1:
+Input: [2, 6, 4, 8, 10, 9, 15] Output: 5 Explanation: You need to sort [6, 4, 8, 10, 9] in ascending order to make the whole array sorted in ascending order.</description>
+    </item>
+    
+    <item>
+      <title>Learn Swift</title>
+      <link>https://b3jmin-blog.netlify.com/posts/swift/</link>
+      <pubDate>Tue, 21 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/swift/</guid>
+      <description>I start to learn swift Basically because do some ios development is the why I bought Macbook even it cannot play games
+Notes ###1. The Basics ### Swift // nil is a special representation for no value var apple = String ? // apple now is nil 
+###2. Operators
+for index in 1...5 { print(&amp;#34;\(index)times 5 is \(index * 5)&amp;#34;) } // 1 times 5 is 5 // 2 times 5 is 10 // 3 times 5 is 15 // 4 times 5 is 20 // 5 times 5 is 25 There is half-range operator .</description>
+    </item>
+    
+    <item>
+      <title>27 Remove element</title>
+      <link>https://b3jmin-blog.netlify.com/posts/removeelement/</link>
+      <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/removeelement/</guid>
+      <description>I plan to start working on leetcode
+##27. Remove Element##
+The question is remove the val in nums in place with the given value and list
+Example:
+Given nums = [3,2,2,3], val = 3 return length = 2 but the array should be changed into [2,2], modifying in place P.S. The array is passed by reference so modification to the array will be tested class Solution: def removeElement(sef, nums:List[int], val:int) -&amp;gt; int: i = len(nums) while(nums.</description>
+    </item>
+    
+    <item>
+      <title>Learn AWS Lambda</title>
+      <link>https://b3jmin-blog.netlify.com/posts/lambda/</link>
+      <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/lambda/</guid>
+      <description>Start learning Lambda and AWS for the first time with Nodejs What can Lambda do? AWS Lambda is a serverless compute(It allows you to run code without having to deal with servers in the cloud) service that runs code and automatically manages the underlying compute resources with all the AWS services
+P.S. This is what I am interested in right now &amp;amp;&amp;amp; Not Familiar with AWS neither
+Implete with Node.js exports.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi</title>
+      <link>https://b3jmin-blog.netlify.com/posts/boinc/</link>
+      <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/posts/boinc/</guid>
+      <description>Use Raspberry Pi for exploring the outer Space I bought a Raspberry Pi last week and after I finish all the downloading and environment setting, I decide to make some interesting software on that and play some fun stuff.
+ First I install seti@home on Raspberry Pi:
+sudo apt-get install bonic sudo apt-get install bonic-client Then I just follow this instruction to setup it However, I found it takes more than 20 hours for it to compute 1 task&amp;hellip; so I decided to make more useful server&amp;hellip;</description>
+    </item>
     
     <item>
       <title>Hello Blog</title>
@@ -21,6 +284,15 @@
 Here are some plans I gonna do:   [] raspberry Pi for web server(learn Linux as well)
   [] Loorent
  It is a big project I want to do but I hate front end, so I always relay on that, but I think it&amp;rsquo;s time for it    [] Android app</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://b3jmin-blog.netlify.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://b3jmin-blog.netlify.com/about/</guid>
+      <description>{ &amp;#34;Name&amp;#34;:{ &amp;#34;FirstName&amp;#34;:&amp;#34;Benjamin&amp;#34;, &amp;#34;LastName&amp;#34;:&amp;#34;Cai&amp;#34;, }, &amp;#34;Nationality&amp;#34;: &amp;#34;China&amp;#34;, &amp;#34;Livesin&amp;#34;: &amp;#34;Toronto, ON&amp;#34;, &amp;#34;Age&amp;#34;: &amp;#34;20&amp;#34;, &amp;#34;Passions&amp;#34;: [ &amp;#34;Programming&amp;#34;, &amp;#34;Adventure&amp;#34;, ], &amp;#34;Interests&amp;#34;: [ &amp;#34;Economics&amp;#34;, &amp;#34;Automation Car&amp;#34;, ], &amp;#34;Education&amp;#34;: { &amp;#34;School&amp;#34;: &amp;#34;University of Waterloo&amp;#34;, &amp;#34;Major&amp;#34;: &amp;#34;Computer Engineering&amp;#34;, } } </description>
     </item>
     
   </channel>

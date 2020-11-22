@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>First Bad Version :: My Blog — record what I learn everyday</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="find Difference class Solution(object): &amp;#34;&amp;#34;&amp;#34; dictionary &amp;#34;&amp;#34;&amp;#34; def findTheDifference(self, s, t): dic = {} for ch in s: dic[ch] = dic.get(ch, 0) &#43; 1 for ch in t: if dic.get(ch, 0) == 0: return ch else: dic[ch] -= 1 class Solution(object): &amp;#34;&amp;#34;&amp;#34; difference &amp;#34;&amp;#34;&amp;#34; def findTheDifference(self, s, t): diff = 0 for i in range(len(s)): diff -= ord(s[i]) diff &#43;= ord(t[i]) diff &#43;= ord(t[-1]) return chr(diff) # Here we use ord can change char to ord ASCII number and chr can change it back class Solution(object): &amp;#34;&amp;#34;&amp;#34; difference &amp;#34;&amp;#34;&amp;#34; def findTheDifference(self, s, t): diff = 0 for i in range(len(s)): diff -= ord(s[i]) diff &#43;= ord(t[i]) diff &#43;= ord(t[-1]) return chr(diff) " />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://b3jmin-blog.netlify.com/posts/finddifference/" />
+
+
+
+
+<link rel="stylesheet" href="https://b3jmin-blog.netlify.com/assets/style.css">
+
+  <link rel="stylesheet" href="https://b3jmin-blog.netlify.com/assets/green.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://b3jmin-blog.netlify.com/img/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="https://b3jmin-blog.netlify.com/img/favicon/green.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  <meta name="twitter:site" content="" />
+
+<meta name="twitter:creator" content="Benjamin Cai" />
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="First Bad Version :: My Blog">
+<meta property="og:description" content="find Difference class Solution(object): &amp;#34;&amp;#34;&amp;#34; dictionary &amp;#34;&amp;#34;&amp;#34; def findTheDifference(self, s, t): dic = {} for ch in s: dic[ch] = dic.get(ch, 0) &#43; 1 for ch in t: if dic.get(ch, 0) == 0: return ch else: dic[ch] -= 1 class Solution(object): &amp;#34;&amp;#34;&amp;#34; difference &amp;#34;&amp;#34;&amp;#34; def findTheDifference(self, s, t): diff = 0 for i in range(len(s)): diff -= ord(s[i]) diff &#43;= ord(t[i]) diff &#43;= ord(t[-1]) return chr(diff) # Here we use ord can change char to ord ASCII number and chr can change it back class Solution(object): &amp;#34;&amp;#34;&amp;#34; difference &amp;#34;&amp;#34;&amp;#34; def findTheDifference(self, s, t): diff = 0 for i in range(len(s)): diff -= ord(s[i]) diff &#43;= ord(t[i]) diff &#43;= ord(t[-1]) return chr(diff) " />
+<meta property="og:url" content="https://b3jmin-blog.netlify.com/posts/finddifference/" />
+<meta property="og:site_name" content="First Bad Version" />
+<meta property="og:image" content="https://b3jmin-blog.netlify.com/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2020-05-02 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Benjamin Cai
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="https://github.com/B3JMIN">Github</a></li>
+        
+      
+        
+          <li><a href="/posts/leetcode/">Leetcode</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="https://github.com/B3JMIN">Github</a></li>
+      
+    
+      
+        <li><a href="/posts/leetcode/">Leetcode</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://b3jmin-blog.netlify.com/posts/finddifference/">First Bad Version</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2020-05-02
+    </span>
+    
+    
+    <span class="post-author">::
+      Benjamin Cai
+    </span>
+    
+  </div>
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="find-difference">find Difference<a href="#find-difference" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    dictionary
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">findTheDifference</span>(self, s, t):
+        dic <span style="color:#f92672">=</span> {}
+        <span style="color:#66d9ef">for</span> ch <span style="color:#f92672">in</span> s:
+            dic[ch] <span style="color:#f92672">=</span> dic<span style="color:#f92672">.</span>get(ch, <span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+        <span style="color:#66d9ef">for</span> ch <span style="color:#f92672">in</span> t:
+            <span style="color:#66d9ef">if</span> dic<span style="color:#f92672">.</span>get(ch, <span style="color:#ae81ff">0</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+                <span style="color:#66d9ef">return</span> ch
+            <span style="color:#66d9ef">else</span>:
+                dic[ch] <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    difference
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">findTheDifference</span>(self, s, t):
+        diff <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(s)):
+            diff <span style="color:#f92672">-=</span> ord(s[i])
+            diff <span style="color:#f92672">+=</span> ord(t[i])
+        diff <span style="color:#f92672">+=</span> ord(t[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+        <span style="color:#66d9ef">return</span> chr(diff)
+
+
+<span style="color:#75715e"># Here we use ord can change char to ord ASCII number and chr can change it back</span>
+
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    difference
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">findTheDifference</span>(self, s, t):
+        diff <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(s)):
+            diff <span style="color:#f92672">-=</span> ord(s[i])
+            diff <span style="color:#f92672">+=</span> ord(t[i])
+        diff <span style="color:#f92672">+=</span> ord(t[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+        <span style="color:#66d9ef">return</span> chr(diff)
+</code></pre></div>
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://b3jmin-blog.netlify.com/posts/ransomnote/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Ransom Note</span>
+        </a>
+      </span>
+      
+      
+      <span class="button next">
+        <a href="https://b3jmin-blog.netlify.com/posts/firstbadversion/">
+          <span class="button__text">First Bad Version</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>Benjamin Cai 2020</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://b3jmin-blog.netlify.com/assets/main.js"></script>
+<script src="https://b3jmin-blog.netlify.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
