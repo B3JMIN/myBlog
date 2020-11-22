@@ -3,18 +3,128 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/dp_learning/</loc>
+    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/</loc>
+    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/</loc>
+    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/opentext/</loc>
+    <lastmod>2020-10-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/learn-ios/</loc>
+    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/permutationinstring/</loc>
+    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/prefixtree/</loc>
+    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/leetcode/cousinsinbinary/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/majorityelement/</loc>
+    <lastmod>2020-05-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/numbercomplement/</loc>
+    <lastmod>2020-05-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/ransomnote/</loc>
+    <lastmod>2020-05-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/finddifference/</loc>
+    <lastmod>2020-05-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/firstbadversion/</loc>
+    <lastmod>2020-05-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/data_structure/</loc>
+    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/linkedlist/</loc>
+    <lastmod>2020-04-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/reverselinkedlist/</loc>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/twosum/</loc>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/luckyint/</loc>
+    <lastmod>2020-04-21T10:10:49-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/shortestsubarray/</loc>
+    <lastmod>2020-04-21T10:10:49-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/swift/</loc>
+    <lastmod>2020-04-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/removeelement/</loc>
+    <lastmod>2020-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/lambda/</loc>
+    <lastmod>2020-04-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b3jmin-blog.netlify.com/posts/boinc/</loc>
+    <lastmod>2020-04-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://b3jmin-blog.netlify.com/posts/hello/</loc>
     <lastmod>2020-03-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://b3jmin-blog.netlify.com/</loc>
-    <lastmod>2020-03-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://b3jmin-blog.netlify.com/posts/</loc>
-    <lastmod>2020-03-25T00:00:00+00:00</lastmod>
+    <loc>https://b3jmin-blog.netlify.com/about/</loc>
+    <priority>0</priority>
   </url>
   
   <url>

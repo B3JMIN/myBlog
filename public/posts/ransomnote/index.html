@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Ransom Note :: My Blog — record what I learn everyday</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="Ransom Note Given an arbitrary ransom note string and another string containing letters from all the magazines, write a function that will return true if the ransom note can be constructed from the magazines ; otherwise, it will return false.
+Each letter in the magazine string can only be used once in your ransom note.
+Note: You may assume that both strings contain only lowercase letters.
+canConstruct(&amp;ldquo;a&amp;rdquo;, &amp;ldquo;b&amp;rdquo;) -&amp;gt; false canConstruct(&amp;ldquo;aa&amp;rdquo;, &amp;ldquo;ab&amp;rdquo;) -&amp;gt; false canConstruct(&amp;ldquo;aa&amp;rdquo;, &amp;ldquo;aab&amp;rdquo;) -&amp;gt; true" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://b3jmin-blog.netlify.com/posts/ransomnote/" />
+
+
+
+
+<link rel="stylesheet" href="https://b3jmin-blog.netlify.com/assets/style.css">
+
+  <link rel="stylesheet" href="https://b3jmin-blog.netlify.com/assets/green.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://b3jmin-blog.netlify.com/img/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="https://b3jmin-blog.netlify.com/img/favicon/green.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  <meta name="twitter:site" content="" />
+
+<meta name="twitter:creator" content="Benjamin Cai" />
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Ransom Note :: My Blog">
+<meta property="og:description" content="Ransom Note Given an arbitrary ransom note string and another string containing letters from all the magazines, write a function that will return true if the ransom note can be constructed from the magazines ; otherwise, it will return false.
+Each letter in the magazine string can only be used once in your ransom note.
+Note: You may assume that both strings contain only lowercase letters.
+canConstruct(&amp;ldquo;a&amp;rdquo;, &amp;ldquo;b&amp;rdquo;) -&amp;gt; false canConstruct(&amp;ldquo;aa&amp;rdquo;, &amp;ldquo;ab&amp;rdquo;) -&amp;gt; false canConstruct(&amp;ldquo;aa&amp;rdquo;, &amp;ldquo;aab&amp;rdquo;) -&amp;gt; true" />
+<meta property="og:url" content="https://b3jmin-blog.netlify.com/posts/ransomnote/" />
+<meta property="og:site_name" content="Ransom Note" />
+<meta property="og:image" content="https://b3jmin-blog.netlify.com/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2020-05-03 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Benjamin Cai
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="https://github.com/B3JMIN">Github</a></li>
+        
+      
+        
+          <li><a href="/posts/leetcode/">Leetcode</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="https://github.com/B3JMIN">Github</a></li>
+      
+    
+      
+        <li><a href="/posts/leetcode/">Leetcode</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://b3jmin-blog.netlify.com/posts/ransomnote/">Ransom Note</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2020-05-03
+    </span>
+    
+    
+    <span class="post-author">::
+      Benjamin Cai
+    </span>
+    
+  </div>
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="ransom-note">Ransom Note<a href="#ransom-note" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Given an arbitrary ransom note string and another string containing letters from all the magazines, write a function that will return true if the ransom note can be constructed from the magazines ; otherwise, it will return false.</p>
+<p>Each letter in the magazine string can only be used once in your ransom note.</p>
+<p>Note:
+You may assume that both strings contain only lowercase letters.</p>
+<p>canConstruct(&ldquo;a&rdquo;, &ldquo;b&rdquo;) -&gt; false
+canConstruct(&ldquo;aa&rdquo;, &ldquo;ab&rdquo;) -&gt; false
+canConstruct(&ldquo;aa&rdquo;, &ldquo;aab&rdquo;) -&gt; true</p>
+<p><strong>The key is using set and count in python</strong></p>
+<p>Not only we need to make sure all the element in ransomNote has in magazine, but also we need to make sure their numbers are less than it in magazine:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">canConstruct</span>(self, ransomNote:str, magazine:str) <span style="color:#f92672">-&gt;</span> bool:
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> set(ransomNote):
+        <span style="color:#66d9ef">if</span> ransomNote<span style="color:#f92672">.</span>count(i) <span style="color:#f92672">&gt;</span> magazine<span style="color:#f92672">.</span>count(i):
+            <span style="color:#66d9ef">return</span> False
+    <span style="color:#66d9ef">return</span> True
+</code></pre></div><p>set is unordered collections of <strong>unique</strong> elements
+then we just count the number of set element in both string</p>
+<p>There is some other <a href="https://leetcode.com/problems/ransom-note/discuss/85801/Share-My-Easy-to-Understand-5-lines-of-Java-Code-13ms-beats-96">Java solutions</a></p>
+
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://b3jmin-blog.netlify.com/posts/numbercomplement/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Number Complement</span>
+        </a>
+      </span>
+      
+      
+      <span class="button next">
+        <a href="https://b3jmin-blog.netlify.com/posts/finddifference/">
+          <span class="button__text">First Bad Version</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>Benjamin Cai 2020</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://b3jmin-blog.netlify.com/assets/main.js"></script>
+<script src="https://b3jmin-blog.netlify.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

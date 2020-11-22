@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Tire(Prefix Tree) :: My Blog — record what I learn everyday</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="Why Tire? With Trie, we can do insert, search in O(L) time, which is obviously faster than BST
+Here is the question: Implement a trie with insert, search, and startsWith methods.
+Example:
+Trie trie = new Trie();
+trie.insert(&amp;ldquo;apple&amp;rdquo;); trie.search(&amp;ldquo;apple&amp;rdquo;); // returns true trie.search(&amp;ldquo;app&amp;rdquo;); // returns false trie.startsWith(&amp;ldquo;app&amp;rdquo;); // returns true trie.insert(&amp;ldquo;app&amp;rdquo;);
+trie.search(&amp;ldquo;app&amp;rdquo;); // returns true Note:
+You may assume that all inputs are consist of lowercase letters a-z. All inputs are guaranteed to be non-empty strings." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://b3jmin-blog.netlify.com/posts/prefixtree/" />
+
+
+
+
+<link rel="stylesheet" href="https://b3jmin-blog.netlify.com/assets/style.css">
+
+  <link rel="stylesheet" href="https://b3jmin-blog.netlify.com/assets/green.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://b3jmin-blog.netlify.com/img/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="https://b3jmin-blog.netlify.com/img/favicon/green.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  <meta name="twitter:site" content="" />
+
+<meta name="twitter:creator" content="Benjamin Cai" />
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Tire(Prefix Tree) :: My Blog">
+<meta property="og:description" content="Why Tire? With Trie, we can do insert, search in O(L) time, which is obviously faster than BST
+Here is the question: Implement a trie with insert, search, and startsWith methods.
+Example:
+Trie trie = new Trie();
+trie.insert(&amp;ldquo;apple&amp;rdquo;); trie.search(&amp;ldquo;apple&amp;rdquo;); // returns true trie.search(&amp;ldquo;app&amp;rdquo;); // returns false trie.startsWith(&amp;ldquo;app&amp;rdquo;); // returns true trie.insert(&amp;ldquo;app&amp;rdquo;);
+trie.search(&amp;ldquo;app&amp;rdquo;); // returns true Note:
+You may assume that all inputs are consist of lowercase letters a-z. All inputs are guaranteed to be non-empty strings." />
+<meta property="og:url" content="https://b3jmin-blog.netlify.com/posts/prefixtree/" />
+<meta property="og:site_name" content="Tire(Prefix Tree)" />
+<meta property="og:image" content="https://b3jmin-blog.netlify.com/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2020-05-12 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container full headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Benjamin Cai
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="https://github.com/B3JMIN">Github</a></li>
+        
+      
+        
+          <li><a href="/posts/leetcode/">Leetcode</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="https://github.com/B3JMIN">Github</a></li>
+      
+    
+      
+        <li><a href="/posts/leetcode/">Leetcode</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://b3jmin-blog.netlify.com/posts/prefixtree/">Tire(Prefix Tree)</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2020-05-12
+    </span>
+    
+    
+    <span class="post-author">::
+      Benjamin Cai
+    </span>
+    
+  </div>
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="why-tire">Why Tire?<a href="#why-tire" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>With Trie, we can do <code>insert</code>, <code>search</code> in O(L) time, which is obviously faster than BST</p>
+<p>Here is the question:
+Implement a trie with insert, search, and startsWith methods.</p>
+<p>Example:</p>
+<p>Trie trie = new Trie();</p>
+<p>trie.insert(&ldquo;apple&rdquo;);
+trie.search(&ldquo;apple&rdquo;);   // returns true
+trie.search(&ldquo;app&rdquo;);     // returns false
+trie.startsWith(&ldquo;app&rdquo;); // returns true
+trie.insert(&ldquo;app&rdquo;);<br>
+trie.search(&ldquo;app&rdquo;);     // returns true
+Note:</p>
+<p>You may assume that all inputs are consist of lowercase letters a-z.
+All inputs are guaranteed to be non-empty strings.</p>
+<p>We want to have a structure that can find &ldquo;apple&rdquo; fastest &ndash; Trie</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">
+<span style="color:#75715e"># The best solution I see is use two set, one for word, one for prefix</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">trie</span>:
+
+<span style="color:#66d9ef">def</span> __init__ (self):
+    self<span style="color:#f92672">.</span>set1 <span style="color:#f92672">=</span> set()
+    self<span style="color:#f92672">.</span>set2 <span style="color:#f92672">=</span> set()
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">insert</span>(self, word:str) <span style="color:#f92672">-&gt;</span> None:
+    self<span style="color:#f92672">.</span>set1<span style="color:#f92672">.</span>add(word)
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> rang(len(word)):
+        self<span style="color:#f92672">.</span>set2<span style="color:#f92672">.</span>add(word[:i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>])
+    <span style="color:#75715e"># since set elements are unique, add prefix to set2</span>
+
+
+<span style="color:#75715e"># Set 1 to search</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">search</span>(self, word:str) <span style="color:#f92672">-&gt;</span> bool:
+    <span style="color:#66d9ef">if</span> word <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>set1:
+        <span style="color:#66d9ef">return</span> True
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">return</span> False
+
+
+<span style="color:#75715e"># Set 2 to prefix</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">startsWith</span>(self, prefix: str) <span style="color:#f92672">-&gt;</span> bool:
+    <span style="color:#66d9ef">if</span> prefix <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>set2:
+        <span style="color:#66d9ef">return</span> True
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">return</span> False
+</code></pre></div>
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://b3jmin-blog.netlify.com/posts/permutationinstring/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Permutation in String</span>
+        </a>
+      </span>
+      
+      
+      <span class="button next">
+        <a href="https://b3jmin-blog.netlify.com/posts/leetcode/cousinsinbinary/">
+          <span class="button__text">Cousins in Binary Tree</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>Benjamin Cai 2020</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://b3jmin-blog.netlify.com/assets/main.js"></script>
+<script src="https://b3jmin-blog.netlify.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
